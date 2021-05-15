@@ -13,16 +13,21 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import argparse
 from argparse import Namespace
-
 import random
 import tqdm
+
+from datasets import get_dataloaders
+from test import evaluate, calculate_accuracy
 
 if torch.cuda.is_available():
   device = torch.device("cuda")
 else:
   device = torch.device("cpu")
 
-
+PARTICLES = ['1fpv', '1ss8', '3j03']
+COUNTS = ['single', 'double', 'triple'] # 'quadruple']
+LENGTH = 1000
+  
 def train(args, model, optimizer, loss_fn):
     """""
     Train the network on the training data
