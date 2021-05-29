@@ -18,9 +18,9 @@ import random
 import tqdm
 
 if torch.cuda.is_available():
-  device = torch.device("cuda")
+    device = torch.device("cuda")
 else:
-  device = torch.device("cpu")
+    device = torch.device("cpu")
   
   
 class MLP(nn.Module):
@@ -39,8 +39,7 @@ class MLP(nn.Module):
         h_2 = F.relu(self.hidden_fc(h_1)) # h_2 = [batch size, 100]
         y_pred = self.output_fc(h_2) # y_pred = [batch size, output dim]
         return y_pred
-      
-      
+       
 def create_resnet18():
     resnet18 = models.resnet18(pretrained=False)
     resnet18.conv1 = torch.nn.Conv1d(1, 64, (7, 7), (2, 2), (3, 3), bias=False)

@@ -18,11 +18,10 @@ import random
 import tqdm
 
 if torch.cuda.is_available():
-  device = torch.device("cuda")
+    device = torch.device("cuda")
 else:
-  device = torch.device("cpu")
+    device = torch.device("cpu")
 
-  
 def unison_shuffled_copies(a, b, c):
     assert len(a) == len(b) == len(c)
     p = np.random.permutation(len(a))
