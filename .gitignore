@@ -20,3 +20,4 @@ bin-release/
 ./data/
 ./logs/
 ./.ipynb_checkpoints/
+./resnet_checkpoint
