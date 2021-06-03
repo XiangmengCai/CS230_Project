@@ -1,2 +1,2 @@
 # CS230_Project
-Repo for CS230 final project
+In this project, we present a novel multi-output model based on CNN that accomplishes diffraction pattern classification and particle type classification at the same time. 
